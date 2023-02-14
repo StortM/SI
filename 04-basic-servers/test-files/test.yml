@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [staging, production]
+  pull_request:
+    branches: [staging, production]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: Copy env file
+        run: cp .env.example .env
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run depcheck
+      - run: npm run build
+        env:
+          CI: true

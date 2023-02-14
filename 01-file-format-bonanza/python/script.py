@@ -21,8 +21,6 @@ with open('01-file-format-bonanza/test-files/test.csv', mode='r') as infile:
 dom = minidom.parse('01-file-format-bonanza/test-files/test.xml')
 elements = dom.getElementsByTagName('student')
 
-print(f"There are {len(elements)} students:")
-
 print('\nAll student data:')
 for elem in elements:
     print(elem.toxml())
