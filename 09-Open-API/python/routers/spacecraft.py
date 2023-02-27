@@ -1,5 +1,4 @@
 from fastapi import APIRouter, Query
-from typing import Union
 from pydantic import BaseModel
 
 router = APIRouter()
@@ -34,7 +33,7 @@ spacecrafts = [
 class Spacecraft(BaseModel):
     id: int
     name: str
-    type: Union[str, None]
+    type: str | None
     description: str
 
 @router.get("/spacecrafts/{id}", tags=["spacecrafts"])
