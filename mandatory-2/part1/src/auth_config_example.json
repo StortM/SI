@@ -1,0 +1,5 @@
+{
+  "domain": "{your_domain_name}",
+  "clientId": "{your_client_id}",
+  "appOrigin": "http://localhost:3000"
+}
