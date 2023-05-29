@@ -1,6 +1,7 @@
 import csv
 import xmltodict
 import yaml
+import json
 
 # .txt file
 txtDict = {}
@@ -33,3 +34,10 @@ with open('test-files/test.yml') as f:
     ymlDict = yaml.safe_load(f)
 
 print(ymlDict)
+
+# .json file
+jsonDict = {}
+with open('test-files/test.json') as f:
+    jsonDict = json.load(f)
+
+print(jsonDict)

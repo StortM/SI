@@ -22,3 +22,8 @@ console.log(csvFileObj)
 const xmlFilePath = path.join(__dirname, '..', 'test-files', 'test.xml')
 const xmlFileObj = await parseFile(xmlFilePath)
 console.log(xmlFileObj)
+
+// read a json file
+const jsonFilePath = path.join(__dirname, '..', 'test-files', 'test.json')
+const jsonFileObj = await parseFile(jsonFilePath)
+console.log(jsonFileObj)

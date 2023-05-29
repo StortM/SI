@@ -1,0 +1,6 @@
+cat:black
+cow:brown
+dog:gray
+elephant:pink
+frog:purple
+goat:red

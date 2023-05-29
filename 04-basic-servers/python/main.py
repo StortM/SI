@@ -1,24 +1,28 @@
 from fastapi import FastAPI
 from datetime import datetime
-import requests
-from dotenv import load_dotenv, dotenv_values
-
-import csv
-from xml.dom import minidom
-import yaml
+from fileParser import convertTxtToDict, convertCsvToDict, convertXmlToDict, convertYmlToDict, convertJsonToDict
 
 app = FastAPI()
 
-@app.get("/txt")
+@app.get("/parse-txt")
 def _():
-    # .txt file
-    txtDict = {}
-    with open('04-basic-servers/test-files/test.txt', 'r') as f:
-        for line in f:
-            key, value = line.strip().split(" ")
-            txtDict[key] = value
-            
-    return txtDict
+    return convertTxtToDict("test-files/test.txt")
+
+@app.get("/parse-csv")
+def _():
+    return convertCsvToDict("test-files/test.csv")
+
+@app.get("/parse-xml")
+def _():
+    return convertXmlToDict("test-files/test.xml")
+
+@app.get("/parse-yml")
+def _():
+    return convertYmlToDict("test-files/test.yml")
+
+@app.get("/parse-json")
+def _():
+    return convertJsonToDict("test-files/test.json")
 
 @app.get("/date")
 def get_date():

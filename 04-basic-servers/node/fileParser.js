@@ -25,8 +25,6 @@ export const parseFile = async (filePath) => {
             return parseCsvFile(file)
         case '.xml':
             return parseXmlFile(file)
-        case '.json':
-            return JSON.parse(file)
         default:
             throw new Error('File type not supported')
     }
