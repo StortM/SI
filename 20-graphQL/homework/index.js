@@ -35,7 +35,7 @@ const blogs = [
 ];
 
 // Functions mimic database calls that randomly return either data or errors
-function getBlogs() {
+const getBlogs = () => {
   const blogsResult = {};
 
   const randNum = Math.floor(Math.random() * 10);
@@ -49,7 +49,7 @@ function getBlogs() {
   return blogsResult;
 }
 
-function createBlog(title, description, completed, ownerId) {
+const createBlog = (title, description, completed, ownerId) => {
   const insertResult = {};
 
   const randNum = Math.floor(Math.random() * 10);
@@ -89,8 +89,8 @@ const server = new ApolloServer({
   resolvers,
 });
 
-const {url} = await startStandaloneServer(server, {
-  listen: {port: 8080},
+const { url } = await startStandaloneServer(server, {
+  listen: { port: 8080 },
 });
 
-console.log(`🚀  Server ready at: ${url}`);
+console.log(`🚀 Server ready at: ${url}`);
