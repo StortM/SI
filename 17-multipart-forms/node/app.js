@@ -5,10 +5,9 @@ import multer from "multer";
 
 const app = express();
 
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-// const upload = multer({dest: "uploads/"});
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "uploads/");
@@ -29,7 +28,7 @@ const storage = multer.diskStorage({
   },
 });
 
-const upload = multer({storage});
+const upload = multer({ storage });
 
 app.post("/form", (req, res) => {
   res.send(
@@ -38,9 +37,9 @@ app.post("/form", (req, res) => {
 });
 
 app.post("/fileform", upload.single("file"), (req, res) => {
-  res.send({data: req.body});
+  res.send({ data: req.body });
 });
 
-app.listen(8000, () => {
-  console.log("Multipart started on port 3000");
-});
+const PORT = 3000;
+
+app.listen(PORT, () => console.log("Server is running on port", PORT));
