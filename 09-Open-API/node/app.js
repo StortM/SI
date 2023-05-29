@@ -5,13 +5,18 @@ import * as swaggerUi from 'swagger-ui-express';
 import swaggerJsdoc from 'swagger-jsdoc';
 
 const swaggerDefinition = {
-    openApi: '3.0.0',
+    openapi: "3.0.0",
     info: {
-        title: 'Hello World',
-        version: '1.0.0',
-        description: 'A sample API',
+      title: "Spacecrafts and their brave users API",
+      version: "1.0.0",
+      description: "A simple API that returns spacecrafts and their brave users.",
     },
-};
+    servers: [
+      {
+        url: "http://localhost:3000",
+      },
+    ],
+  };
 
 const options = {
     swaggerDefinition,

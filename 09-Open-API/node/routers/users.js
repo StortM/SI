@@ -26,14 +26,31 @@ router.get("/api/users", (req, res) => {
  * /api/users:
  *  post:
  *    description: post a user to the users array
+ *    requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               id:
+ *                type: integer
+ *               name:
+ *                 type: string
+ *             required:
+ *               - id
+ *               - name
+ *           example:
+ *             id: 1
+ *             name: john doe
  *    responses:
  *     '200':
- *      description: Returns the user array
+ *      description: User created
  */
 router.post("/api/users", (req, res) => {
     const user = req.body;
     users.push(user);
-    res.send({data: users});
+    res.send ({ data: users.find((user) => user.id === user.id) });
 });
 
 export default router;
