@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
+import FormData from "form-data";
+import fetch from "node-fetch";
 
 // Functions
 const login = async () => {
@@ -66,16 +68,16 @@ await login();
 
 // Endpoints
 app.post("/send-sms", async (req, res) => {
-  const {message, phone} = req.body;
+  const { message, phone } = req.body;
   try {
     await sendSMS(message, phone);
-    res.status(200).send({message: "SMS sent successfully!"});
+    res.status(200).send({ message: "SMS sent successfully!" });
   } catch (error) {
     if (error) {
       console.log("Error occurred while sending SMS, trying to login again...");
       await login();
       await sendSMS(message, phone);
-      res.status(200).send({message: "SMS sent successfully!"});
+      res.status(200).send({ message: "SMS sent successfully!" });
     }
   }
 });
