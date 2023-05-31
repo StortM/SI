@@ -1,0 +1,1 @@
+ssh -i SI_key.pem  azureuser@98.71.34.120

@@ -13,7 +13,7 @@ app = FastAPI()
 def root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
-STREAM_DELAY = 1
+STREAM_DELAY = 0.1
 RETRY_TIMEOUT = 1000
 
 @app.get("/sse")

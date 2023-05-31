@@ -1,0 +1,5 @@
+mysqldump:
+mysqldump -u root -p classicmodels > dbdump.sql
+
+generate documentation for sql database:
+npx mro

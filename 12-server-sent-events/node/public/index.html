@@ -25,7 +25,7 @@
         eventSource.addEventListener('open', (event) => {
             statusDiv.innerText = "Connection was opened.";
         });
-
+        
         eventSource.addEventListener('error', (event) => {
             if (eventSource.readyState === EventSource.CLOSED) {
                 statusDiv.innerText = "Connection was closed.";

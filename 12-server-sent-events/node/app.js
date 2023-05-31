@@ -10,7 +10,7 @@ app.get('/synchronize-time', (req, res) => {
         'Connection': 'keep-alive'
     });
 
-    setInterval(() => sendTimeToClient(res), 1000);
+    setInterval(() => sendTimeToClient(res), 100);
 });
 
 const sendTimeToClient = (res) => {
