@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "python"
+name = "server-to-server"
 version = "0.1.0"
 description = ""
 authors = ["Michael Fuglø <michael@fuglo.com>"]

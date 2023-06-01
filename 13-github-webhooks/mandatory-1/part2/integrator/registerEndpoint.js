@@ -5,7 +5,6 @@ const registerEndpoint = () => {
   
     const event = "order.created";
     const callback_url = "https://9cad-217-74-223-206.ngrok-free.app/bo"
-    const webhookName = "bo"
     const data = { callback_url, event }
 
     fetch(serverEndpoint, {

@@ -1,6 +1,5 @@
 import { WebSocketServer } from "ws";
 
-
 const PORT = 3000;
 const server = new WebSocketServer({ port: PORT });
 

@@ -76,6 +76,12 @@ app.post('/webhook', (req, res) =>{
         res.send({'message': 'payload received'})
     }
 
+    // validate that the event is one of the accepted types
+    if (!acceptedWebhookEventTypes.includes(event)) {
+        res.status(400).send('Invalid event type', event)
+        return
+    }
+
     const payload = { event, callback_url }
     db.insert(payload, (err) => {
         if (err) throw err

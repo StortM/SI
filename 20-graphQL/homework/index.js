@@ -4,18 +4,18 @@ import fs from "fs";
 
 const typeDefs = fs.readFileSync("./graphql/schema.graphql", "utf8");
 
-// const users = [
-//   {
-//     id: 1,
-//     email: "john@exmaple.com",
-//     password: "sesame",
-//   },
-//   {
-//     id: 2,
-//     email: "jane@example.com",
-//     password: "open",
-//   },
-// ];
+const users = [
+  {
+    id: 1,
+    email: "john@exmaple.com",
+    password: "sesame",
+  },
+  {
+    id: 2,
+    email: "jane@example.com",
+    password: "open",
+  },
+];
 
 const blogs = [
   {
@@ -38,9 +38,9 @@ const blogs = [
 const getBlogs = () => {
   const blogsResult = {};
 
-  const randNum = Math.floor(Math.random() * 10);
+  const randNum = Math.floor(Math.random() * 10); // 0-9
 
-  if (randNum < 2) {
+  if (randNum % 2) {
     blogsResult.blogs = blogs;
   } else {
     blogsResult.errors = ["Whoops something went wrong!"];
@@ -90,7 +90,7 @@ const server = new ApolloServer({
 });
 
 const { url } = await startStandaloneServer(server, {
-  listen: { port: 8080 },
+  listen: { port: 3000 },
 });
 
 console.log(`🚀 Server ready at: ${url}`);

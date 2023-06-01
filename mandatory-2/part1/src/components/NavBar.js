@@ -52,7 +52,7 @@ const NavBar = () => {
 									exact
 									activeClassName="router-link-exact-active"
 								>
-                  Home
+									Home
 								</NavLink>
 							</NavItem>
 						</Nav>
@@ -65,7 +65,7 @@ const NavBar = () => {
 										className="btn-margin"
 										onClick={() => loginWithRedirect()}
 									>
-                    Log in
+										Log in
 									</Button>
 								</NavItem>
 							)}
@@ -93,8 +93,7 @@ const NavBar = () => {
 											id="qsLogoutBtn"
 											onClick={() => logoutWithRedirect()}
 										>
-											<FontAwesomeIcon icon="power-off" className="mr-3" /> Log
-                      out
+											<FontAwesomeIcon icon="power-off" className="mr-3" /> Log out
 										</DropdownItem>
 									</DropdownMenu>
 								</UncontrolledDropdown>
@@ -109,7 +108,7 @@ const NavBar = () => {
 										block
 										onClick={() => loginWithRedirect({})}
 									>
-                    Log in
+										Log in
 									</Button>
 								</NavItem>
 							</Nav>
@@ -137,7 +136,7 @@ const NavBar = () => {
 										to="/profile"
 										activeClassName="router-link-exact-active"
 									>
-                    Profile
+										Profile
 									</RouterNavLink>
 								</NavItem>
 								<NavItem>
@@ -147,7 +146,7 @@ const NavBar = () => {
 										id="qsLogoutBtn"
 										onClick={() => logoutWithRedirect()}
 									>
-                    Log out
+										Log out
 									</RouterNavLink>
 								</NavItem>
 							</Nav>

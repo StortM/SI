@@ -8,7 +8,7 @@ const Hero = () => (
 		<h1 className="mb-4">Welcome to the index page!</h1>
 
 		<p className="lead">
-      Try logging in using the button on the top right!
+			Try logging in using the button on the top right!
 		</p>
 	</div>
 )

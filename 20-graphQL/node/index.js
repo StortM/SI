@@ -37,8 +37,8 @@ const server = new ApolloServer({
 //  1. creates an Express app
 //  2. installs your ApolloServer instance as middleware
 //  3. prepares your app to handle incoming requests
-const {url} = await startStandaloneServer(server, {
-  listen: {port: 8080},
+const { url } = await startStandaloneServer(server, {
+  listen: { port: 3000 },
 });
 
 console.log(`🚀  Server ready at: ${url}`);
